@@ -1,9 +1,20 @@
+import pip
+pip.main(['install', 'keras'])
+pip.main(['install', 'tensorflow'])
+pip.main(['install', 'pandas'])
 import numpy as np
+import pandas as pd
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout
 from keras.optimizers import Adam
 
 # Assuming preprocessed dataset is loaded as X_train, y_train, X_test, y_test
+train_df: pd.DataFrame = pd.read_csv('train.csv')
+test_df: pd.DataFrame = pd.read_csv('test.csv')
+
+# Preprocess data
+train_df.describe()
+test_df.describe()
 
 # Generator Model
 generator = Sequential()
